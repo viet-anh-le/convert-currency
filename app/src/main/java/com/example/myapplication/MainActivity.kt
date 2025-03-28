@@ -50,7 +50,7 @@ class MainActivity : ComponentActivity() {
                 val fromKey = currencies[currencySpinner1.selectedItemPosition]
                 val toKey = currencies[currencySpinner2.selectedItemPosition]
                 val result = amount * exchangeRates[toKey]!!.first / exchangeRates[fromKey]!!.first
-                amount2.text = result.toString()
+                amount2.text = String.format("%.3f", result)
             }
             else{
                 amount2.text = "0"
@@ -71,7 +71,7 @@ class MainActivity : ComponentActivity() {
                     val fromKey = currencies[currencySpinner1.selectedItemPosition]
                     val toKey = currencies[currencySpinner2.selectedItemPosition]
                     val toKeyVal = exchangeRates[toKey]!!.first / exchangeRates[fromKey]!!.first
-                    textUnit.text = "1 ${exchangeRates[fromKey]!!.second} = ${toKeyVal} ${exchangeRates[toKey]!!.second}"
+                    textUnit.text = "1.0 ${exchangeRates[fromKey]!!.second} = ${String.format("%.4f", toKeyVal)} ${exchangeRates[toKey]!!.second}"
                     convertCurrency()
                 }
 
@@ -95,7 +95,7 @@ class MainActivity : ComponentActivity() {
                     val fromKey = currencies[currencySpinner1.selectedItemPosition]
                     val toKey = currencies[currencySpinner2.selectedItemPosition]
                     val toKeyVal = exchangeRates[toKey]!!.first / exchangeRates[fromKey]!!.first
-                    textUnit.text = "1.0 ${exchangeRates[fromKey]!!.second} = ${toKeyVal} ${exchangeRates[toKey]!!.second}"
+                    textUnit.text = "1.0 ${exchangeRates[fromKey]!!.second} = ${String.format("%.4f", toKeyVal)} ${exchangeRates[toKey]!!.second}"
                     convertCurrency()
                 }
 
